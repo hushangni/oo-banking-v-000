@@ -16,6 +16,7 @@ class Transfer
     if self.valid?
       @receiver.deposit(amount)
       @sender.deposit(-amount)
+      @status = "complete"
     else
       puts "rejected"
     end
