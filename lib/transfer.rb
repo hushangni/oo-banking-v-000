@@ -18,7 +18,7 @@ class Transfer
       @sender.deposit(-amount)
       @status = "complete"
     else
-      puts "rejected"
+      "Transaction rejected. Please check your account balance."
     end
   end
 
