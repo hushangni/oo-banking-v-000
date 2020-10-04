@@ -20,6 +20,7 @@ class Transfer
     else
       puts "in rejected"
       puts @receiver.name
+      puts @sender.name
       @status = "rejected"
       "Transaction rejected. Please check your account balance."
     end
