@@ -14,8 +14,11 @@ class Transfer
 
   def execute_transaction
     if self.valid? && @status == "pending"
-      @receiver.deposit(amount)
-      @sender.deposit(-amount)
+      puts @sender.name
+      puts @sender.balance
+      puts @amount
+      @receiver.deposit(@amount)
+      @sender.deposit(-@amount)
       @status = "complete"
     else
       puts "in rejected"
@@ -28,8 +31,8 @@ class Transfer
 
   def reverse_transfer
     if @status == "complete"
-      @sender.deposit(amount)
-      @receiver.deposit(-amount)
+      @sender.deposit(@amount)
+      @receiver.deposit(-@amount)
       @status = "reversed"
     end
   end
